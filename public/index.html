@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frontend Público</title>
+</head>
+<body>
+  <h1>Hola desde el frontend</h1>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    socket.on('mensaje', data => {
+      console.log('Mensaje del servidor:', data);
+    });
+
+    socket.emit('mensaje', { texto: '¡Hola servidor!' });
+  </script>
+</body>
+</html>
